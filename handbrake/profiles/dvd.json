@@ -1,0 +1,142 @@
+[
+  {
+    "Job": {
+      "Audio": {
+        "AudioList": [
+          {
+            "DRC": 0.0,
+            "Encoder": 1073743872,
+            "Gain": 0.0,
+            "Mixdown": -1,
+            "NormalizeMixLevel": false,
+            "Samplerate": 48000,
+            "Track": 0,
+            "DitherMethod": 0
+          },
+          {
+            "DRC": 0.0,
+            "Encoder": 1073743872,
+            "Gain": 0.0,
+            "Mixdown": -1,
+            "NormalizeMixLevel": false,
+            "Samplerate": 48000,
+            "Track": 1,
+            "DitherMethod": 0
+          }
+        ],
+        "CopyMask": [
+          1074003968,
+          1073750016,
+          1090519040
+        ],
+        "FallbackEncoder": 2048
+      },
+      "Destination": {
+        "ChapterList": [
+          {
+            "Name": "Chapter 1"
+          },
+          {
+            "Name": "Chapter 2"
+          },
+          {
+            "Name": "Chapter 3"
+          },
+          {
+            "Name": "Chapter 4"
+          }
+        ],
+        "ChapterMarkers": true,
+        "AlignAVStart": false,
+        "File": "",
+        "Mp4Options": {
+          "IpodAtom": false,
+          "Mp4Optimize": false
+        },
+        "Mux": 2097152
+      },
+      "Filters": {
+        "FilterList": [
+          {
+            "ID": 4,
+            "Settings": {
+              "mode": "7"
+            }
+          },
+          {
+            "ID": 3,
+            "Settings": {
+              "block-height": "16",
+              "block-thresh": "40",
+              "block-width": "16",
+              "filter-mode": "2",
+              "mode": "3",
+              "motion-thresh": "1",
+              "spatial-metric": "2",
+              "spatial-thresh": "1"
+            }
+          },
+          {
+            "ID": 11,
+            "Settings": {
+              "crop-bottom": "4",
+              "crop-left": "12",
+              "crop-right": "8",
+              "crop-top": "4",
+              "height": "570",
+              "width": "704"
+            }
+          },
+          {
+            "ID": 6,
+            "Settings": {
+              "mode": "2",
+              "rate": "27000000/900000"
+            }
+          }
+        ]
+      },
+      "PAR": {
+        "Num": 3325,
+        "Den": 3124
+      },
+      "Metadata": {},
+      "SequenceID": 0,
+      "Source": {
+        "Angle": 1,
+        "Range": {
+          "Type": "chapter",
+          "Start": 1,
+          "End": 4
+        },
+        "Title": 1,
+        "Path": ""
+      },
+      "Subtitle": {
+        "Search": {
+          "Burn": false,
+          "Default": false,
+          "Enable": true,
+          "Forced": false
+        },
+        "SubtitleList": []
+      },
+      "Video": {
+        "Encoder": 65536,
+        "Level": "auto",
+        "TwoPass": false,
+        "Turbo": false,
+        "ColorMatrixCode": 0,
+        "Options": "strong-intra-smoothing=0:rect=0",
+        "Preset": "fast",
+        "Profile": "auto",
+        "Quality": 22.0,
+        "HWDecode": false,
+        "QSV": {
+          "Decode": false,
+          "AsyncDepth": 0
+        }
+      }
+    }
+  }
+]
