@@ -11,6 +11,7 @@ parser = argparse.ArgumentParser(prog='test')
 parser.add_argument('--season', help='number of season', type=int)
 parser.add_argument('--start', help='number of first episode', type=int)
 parser.add_argument('--end', help='number of last episode', type=int)
+parser.add_argument('--offset', help='number of output filename will be increased by this value', type=int, default=0)
 
 parser.add_argument('--output', help='output file path')
 parser.add_argument('--input', help='input file path')
@@ -52,14 +53,19 @@ for x in range(args.start, int(args.end)+1):
 
 	# substitution of placeholders
 	for i, p in raw_pathes.items():
+		offset = 0
+
+		# offset will only used for output files
+		if i == 'dst':
+			offset = int(args.offset)
 		raw_path = p
 
 		if '__e__' in p:
-			 raw_path = raw_path.replace('__e__', x)
+			 raw_path = raw_path.replace('__e__', '%d' % (x + offset))
 		if '__s__' in p:
-			raw_path = raw_path.replace('__s__', int(args.season))
+			raw_path = raw_path.replace('__s__', '%d' % int(args.season))
 		if '__ee__' in p:
-			raw_path = raw_path.replace('__ee__', '%02d' % x)
+			raw_path = raw_path.replace('__ee__', '%02d' % (x + offset))
 		if '__ss__' in p:
 			raw_path = raw_path.replace('__ss__', '%02d' % int(args.season))
 
