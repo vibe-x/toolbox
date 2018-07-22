@@ -4,6 +4,8 @@ import argparse
 import sys
 import json
 import re
+import copy
+
 
 parser = argparse.ArgumentParser(prog='test')
 parser.add_argument('--season', help='number of season', type=int)
@@ -29,7 +31,7 @@ with open(args.profile) as j:
 	data = json.load(j)
 
 # first entry will be used as profile
-first_entry = data[0]
+profile = data[0]
 
 raw_pathes = {
 	'src': ('%s' % args.input),
@@ -41,7 +43,7 @@ output = list()
 
 # start to end
 for x in range(args.start, int(args.end)+1):
-	data = first_entry
+	data = copy.deepcopy(profile)
 
 	pathes = {
 		'src': {},
