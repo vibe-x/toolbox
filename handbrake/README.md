@@ -40,11 +40,12 @@ path / file syntax with templating functionality. The combination of pathes depe
 
 You can use:
 
+```
 __e__ episode counter (1, 2, [...], end)
 __ee__ episode counter (01, 02, [...], end)
 __s__ season number (1)
 __ss__ season number with leading zero
-
+```
 
 ## Example
 
