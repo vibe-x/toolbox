@@ -12,6 +12,7 @@ parser.add_argument('--season', help='number of season', type=int)
 parser.add_argument('--start', help='number of first episode', type=int)
 parser.add_argument('--end', help='number of last episode', type=int)
 parser.add_argument('--offset', help='number of output filename will be increased by this value', type=int, default=0)
+parser.add_argument('--skip', help='comma separated numbers to skip', default='')
 
 parser.add_argument('--output', help='output file path')
 parser.add_argument('--input', help='input file path')
@@ -41,9 +42,12 @@ raw_pathes = {
 
 # every file to enqueue
 output = list()
+skip = args.skip.split(',')
 
 # start to end
 for x in range(args.start, int(args.end)+1):
+	if x in skip:
+		continue
 	data = copy.deepcopy(profile)
 
 	pathes = {
