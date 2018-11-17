@@ -13,6 +13,7 @@ parser.add_argument('--start', help='number of first episode', type=int)
 parser.add_argument('--end', help='number of last episode', type=int)
 parser.add_argument('--offset', help='number of output filename will be increased by this value', type=int, default=0)
 parser.add_argument('--skip', help='comma separated numbers to skip', default='')
+parser.add_argument('--chapters', help='override chapter information', type=int)
 
 parser.add_argument('--output', help='output file path')
 parser.add_argument('--input', help='input file path')
@@ -82,6 +83,15 @@ for x in range(args.start, int(args.end)+1):
 
 	data['Job']['Source']['Path'] = pathes['src']
 	data['Job']['Destination']['File'] = pathes['dst']
+
+	# override chapters
+	if args.chapters:
+		chapters = list()
+		for i in range(args.chapters):
+			d = {'Name': 'Chapter {index}'.format(index=(i+1))}
+			chapters.append(d)
+
+		data['Job']['Destination']['ChapterList'] = chapters
 
 	output.append(data)
 
