@@ -93,6 +93,10 @@ for x in range(args.start, int(args.end)+1):
 
 		data['Job']['Destination']['ChapterList'] = chapters
 
+		if data['Job']['Source']['Range']['Type'] == 'chapter':
+			data['Job']['Source']['Range']['Start'] = 1
+			data['Job']['Source']['Range']['End'] = args.chapters
+
 	output.append(data)
 
 # write queue to json file
